@@ -18,7 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -92,8 +92,8 @@ export default function Dashboard() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+          <Typography variant="h4" noWrap component="div">
+            CheckTime
           </Typography>
         </Toolbar>
       </AppBar>
@@ -117,16 +117,17 @@ export default function Dashboard() {
         </DrawerHeader>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding>
+        
+            <ListItem key={1} disablePadding component={Link} to={"/ConfigsProjeto"} 
+            style={{textDecoration:'none',color:"black"}}>
               <ListItemButton>
                 <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                   <MailIcon />
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={"texto"} />
               </ListItemButton>
             </ListItem>
-          ))}
+        
         </List>
         <Divider />
         <List>
